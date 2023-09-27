@@ -6,3 +6,10 @@ Of course, I'm open to critique that helps the content, so if you (assuming *any
 Atomic Batteries to Power, Turbines to Speed.
 
 Let's go.
+
+# Contents
+ - [Deployment](./deployment/deployment_overview.md)
+
+
+# Style guide for this
+ - In each folder, there are two files: given folder name <name>, they are <name>_overview.md which details the contents of the folder <name>_resources.md which contains a list of linked resources for that topic.
