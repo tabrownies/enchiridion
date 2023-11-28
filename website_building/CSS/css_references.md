@@ -31,3 +31,4 @@ img, picture, SVG, video {
 ```
  - [CSS Animation](https://www.youtube.com/watch?v=HZHHBwzmJLk)
  - [different ways to specify color](https://www.smashingmagazine.com/2021/11/guide-modern-css-colors/)
+ - [CSS System Colors](https://blog.jim-nielsen.com/2021/css-system-colors/)
