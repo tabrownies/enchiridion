@@ -7,3 +7,4 @@
  - [Cheat sheet](https://www.git-tower.com/blog/git-cheat-sheet/)
  - [exmaple git workflow](https://nvie.com/posts/a-successful-git-branching-model/)
  - [Atlassian's thoughts on workflows with some tutorial](https://www.atlassian.com/git/tutorials/comparing-workflows/forking-workflow)
+ - [Explaination of the .git folder](https://jvns.ca/blog/2024/01/26/inside-git/?utm_source=tldrdevops)
