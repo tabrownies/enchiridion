@@ -1,5 +1,6 @@
 # This file is used to test the loading.py file
-from loading import loading_dots_function, loading_armenian_alphabet_lowercase
+from loading import loading_dots_function
+from loading_symbols import loading_armenian_alphabet_lowercase
 
 def test_loading_dots_function():
     # test loading_dots_function with a list and a index within the lists range
