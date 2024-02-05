@@ -1,5 +1,5 @@
 # List of symbols for different loading spinner animations
-loading_spinner_symbols =['[\]', '[|]', '[/]', '[-]']
+loading_spinner_symbols =['[\\]', '[|]', '[/]', '[-]']
 
 # List of symbols for basic loading dots animation
 loading_dots_basic_symbols =['   ', '.  ', '.. ', '...']
@@ -23,10 +23,10 @@ loading_english_alphabet_uppercase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I
 loading_english_alphabet_lowercase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
 # List of lowercase Armenian alphabet letters
-loading_armenian_alphabet_lowercase = ['ա','բ','գ','դ','ե','զ','է','ը','թ','ժ','ի','լ','խ','ծ','կ','հ','ձ','ղ','ճ','մ','յ','ն','շ','ո','չ','պ','ջ','ռ','ս','վ','տ','ր','ց','ւ','փ','ք','օ','ֆ']
+loading_armenian_alphabet_lowercase = ['ա','բ','գ','դ','ե','զ','է','ը','թ','ժ','ի','լ','խ','ծ','կ','հ','ձ','ղ','ճ','մ','յ','ն','շ','ո','չ','պ','ջ','ռ','ս','վ','տ','ր','ց','ու','փ','ք','և', 'օ','ֆ']
 
 # List of uppercase Armenian alphabet letters
-loading_armenian_alphabet_uppercase = ['Ա','Բ','Գ','Դ','Ե','Զ','Է','Ը','Թ','Ժ','Ի','Լ','Խ','Ծ','Կ','Հ','Ձ','Ղ','Ճ','Մ','Յ','Ն','Շ','Ո','Չ','Պ','Ջ','Ռ','Ս','Վ','Տ','Ր','Ց','Ւ','Փ','Ք','Օ','Ֆ']
+loading_armenian_alphabet_uppercase = ['Ա','Բ','Գ','Դ','Ե','Զ','Է','Ը','Թ','Ժ','Ի','Լ','Խ','Ծ','Կ','Հ','Ձ','Ղ','Ճ','Մ','Յ','Ն','Շ','Ո','Չ','Պ','Ջ','Ռ','Ս','Վ','Տ','Ր','Ց','ՈՒ','Փ','Ք','ԵՎ','Օ','Ֆ']
 
 # List of lowercase Greek alphabet letters
 loading_greek_alphabet_lowercase = ['α','β','γ','δ','ε','ζ','η','θ','ι','κ','λ','μ','ν','ξ','ο','π','ρ','σ','τ','υ','φ','χ','ψ','ω']
@@ -43,7 +43,7 @@ loading_cyrillic_alphabet_uppercase = ['А','Б','В','Г','Д','Е','Ж','З','
 # List of symbols to be used for loading animation
 loading_symbols = loading_armenian_alphabet_lowercase
 
-def loading_dots_function(loading_symbols, raise_errors=True) -> function:
+def loading_dots_function(loading_symbols, raise_errors=True):
     """
     Returns a function that can be called to create loading symbols
     
@@ -57,7 +57,7 @@ def loading_dots_function(loading_symbols, raise_errors=True) -> function:
         if raise_errors:
             raise ValueError(error_message)
         else:
-            return loading_spinner_symbols.__index__
+            return lambda index: loading_spinner_symbols[index%len(loading_spinner_symbols)]
 
     # check if the loading_symbols is a list and return the corresponding loading function
     if type(loading_symbols) == list:
@@ -68,10 +68,10 @@ def loading_dots_function(loading_symbols, raise_errors=True) -> function:
         if len(loading_symbols.__code__.co_varnames) == 1:
             return loading_symbols
         else:
-            handle_error('The loading_symbols function must take a single parameter') 
-    # check if the loading_symbols is an object, verify it has an __index__ method, and return it
-    elif hasattr(loading_symbols, '__index__'):
-        return loading_symbols.__index__
+            return handle_error('The loading_symbols function must take a single parameter') 
+    # check if the loading_symbols is an object, verify it has an __getitem__ method, and return it
+    elif hasattr(loading_symbols, '__getitem__'):
+        return loading_symbols.__getitem__
     else:
-        handle_error('The loading_symbols must be a list, a function, or an object with an __index__ method')
+        return handle_error('The loading_symbols must be a list, a function, or an object with an __getitem__ method')
     
