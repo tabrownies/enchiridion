@@ -27,10 +27,19 @@ def loading_dots_function(loading_symbols, raise_errors=True):
         if len(loading_symbols.__code__.co_varnames) == 1:
             return loading_symbols
         else:
-            return handle_error('The loading_symbols function must take a single parameter') 
+            # properly handle the error
+            try:
+                return handle_error('The loading_symbols function must take a single parameter') 
+            # propagate it up
+            except ValueError as e:
+                raise e
     # check if the loading_symbols is an object, verify it has an __getitem__ method, and return it
     elif hasattr(loading_symbols, '__getitem__'):
         return loading_symbols.__getitem__
     else:
-        return handle_error('The loading_symbols must be a list, a function, or an object with an __getitem__ method')
-    
+        # properly handle the error
+        try:
+            return handle_error('The loading_symbols must be a list, a function, or an object with an __getitem__ method')
+        # propagate it up
+        except ValueError as e:
+            raise e
