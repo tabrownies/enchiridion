@@ -13,10 +13,18 @@ def loading_dots_function(loading_symbols, raise_errors=True):
     function(index)->string: A function that takes an index and returns the corresponding loading symbol.
     """
     def handle_error(error_message):
+        """
+        Handles errors in the user specified way. If raise_errors is True, raise a ValueError with the error_message. If False, return a function that returns the loading spinner symbol at the given index.
+        Parameters:
+        error_message (string): The error message to raise if raise_errors is True.
+        Returns:
+        function(index)->string: A function that takes an index and returns the corresponding loading symbol.
+        """
         if raise_errors:
             raise ValueError(error_message)
         else:
-            return lambda index: loading_spinner_symbols[index%len(loading_spinner_symbols)]
+            # use the loading_dots_function to return a loading spinner. Use raise_errors=True to avoid potential (although hopefully impossible) infinite recursion.
+            return loading_dots_function(loading_spinner_symbols, True)
 
     # check if the loading_symbols is a list and return the corresponding loading function
     if type(loading_symbols) == list:
