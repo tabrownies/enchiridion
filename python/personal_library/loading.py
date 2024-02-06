@@ -7,8 +7,8 @@ def loading_dots_function(loading_symbols, raise_errors=True):
     Returns a function that can be called to create loading symbols
     
     Parameters:
-    loading_symbols (list, or function(index)->string, object): If a list, use those symbols as the loading symbols, if a function then use it as a callback to get the loading symbol at the given index. If an object, check for th __index__ method and use it as a callback to get the loading symbol at the given index.
-    raise_errors (bool): If True, raise an error if the loading_symbols is not a list, a function, or an object with an __index__ method. If False, return a loading spinner symbols.
+    loading_symbols (list, or function(index)->string, object): If a list, use those symbols as the loading symbols, if a function then use it as a callback to get the loading symbol at the given index. If an object, check for the __getitem__ method and use it as a callback to get the loading symbol at the given index.
+    raise_errors (bool): If True, raise an error if the loading_symbols is not a list, a function, or an object with an __getitem__ method. If False, return a loading spinner symbols.
     Returns:
     function(index)->string: A function that takes an index and returns the corresponding loading symbol.
     """
