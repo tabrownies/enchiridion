@@ -5,4 +5,5 @@
    - [How to test promises in the browser](https://github.com/BYU-CS-260-Winter-2019/promises)
  - [Using REST API](https://github.com/BYUCS260/ajaxtutorial/blob/master/README.md)
  - [List](https://github.com/toddmotto/public-apis) of lots of REST APIs
- - 
+ - [The Event Loop](https://www.youtube.com/watch?v=cCOL7MC4Pl0&t=922s)
+   - Shown to me by Hunter Henrichsen
