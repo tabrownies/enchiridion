@@ -8,3 +8,5 @@
  - [exmaple git workflow](https://nvie.com/posts/a-successful-git-branching-model/)
  - [Atlassian's thoughts on workflows with some tutorial](https://www.atlassian.com/git/tutorials/comparing-workflows/forking-workflow)
  - [Explaination of the .git folder](https://jvns.ca/blog/2024/01/26/inside-git/?utm_source=tldrdevops)
+ - [rebase explanation](https://www.youtube.com/watch?v=f1wnYdLEpgI)
+ - [squash explanation](https://www.youtube.com/watch?v=V5KrD7CmO4o)
